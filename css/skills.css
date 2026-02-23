@@ -1,0 +1,141 @@
+.skills {
+  padding: 40px 0;
+}
+
+.wrapper.light .skills {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.wrapper.dark .skills {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Head */
+.skills__head {
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+
+.skills__title {
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.skills__subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+/* Grid */
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.skills__card {
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.wrapper.light .skills__card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.wrapper.dark .skills__card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.skills__card-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+/* List */
+.skills__list {
+  display: grid;
+  gap: 10px;
+}
+
+.skills__list li {
+  font-size: 14px;
+  opacity: 0.9;
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.4;
+}
+
+.skills__list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 6px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* Tags */
+.skills__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.wrapper.light .skills__tag {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  color: #3730a3;
+}
+
+.wrapper.dark .skills__tag {
+  background: rgba(129, 140, 248, 0.12);
+  border: 1px solid rgba(129, 140, 248, 0.22);
+  color: #c7d2fe;
+}
+
+.skills__note {
+  margin-top: 15px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ffffff9f;
+}
+
+.wrapper.light .skills__note {
+  color: #475569;
+}
+
+.wrapper.dark .skills__note {
+  color: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}

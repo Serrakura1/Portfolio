@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Plokhuta Vitalii</title>
+    <meta name="description" content="Shopify developer building custom themes and advanced store functionality." />
+
+    <link rel="icon" href="./img/favicon.svg" type="image/svg+xml" />
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = saved || (systemDark ? "dark" : "light");
+
+        document.documentElement.classList.add("theme-" + theme);
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/hero.css" />
+    <link rel="stylesheet" href="./css/services.css" />
+    <link rel="stylesheet" href="./css/skills.css" />
+    <link rel="stylesheet" href="./css/projects.css" />
+    <link rel="stylesheet" href="./css/clients-get.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper">
+            <a href="#hero" class="header__logo reveal reveal-delay-1"> <span class="logo-accent">Shopify</span> Developer </a>
+
+            <button class="theme-switch reveal-left reveal-delay-8" id="themeToggle" aria-label="Toggle theme">
+              <span class="theme-switch__track">
+                <span class="theme-switch__icon theme-switch__icon--sun">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fefefe" viewBox="0 0 256 256">
+                    <path
+                      d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+                  </svg>
+                </span>
+                <span class="theme-switch__icon theme-switch__icon--moon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#1f1f1f" viewBox="0 0 256 256">
+                    <path
+                      d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"></path>
+                  </svg>
+                </span>
+                <span class="theme-switch__thumb"></span>
+              </span>
+            </button>
+
+            <nav class="header__navigation">
+              <ul class="header__navigation-list">
+                <li class="reveal-right reveal-delay-2"><a href="#services">Services</a></li>
+                <li class="reveal-right reveal-delay-3"><a href="#skills">Skills</a></li>
+                <li class="reveal-right reveal-delay-4"><a href="#projects">Projects</a></li>
+                <li class="reveal-right reveal-delay-5"><a href="#clients-get">What clients get</a></li>
+                <li class="reveal-right reveal-delay-6"><a href="./CV/Resume.pdf" class="nav-cv" target="_blank">Check CV</a></li>
+                <li class="reveal-right reveal-delay-7"><a href="#contact" class="nav-cta">Contact</a></li>
+              </ul>
+            </nav>
+
+            <!-- Burger -->
+            <button class="header__burger" aria-label="Open menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <section class="hero" id="hero">
+          <div class="container">
+            <div class="hero__wrapper">
+              <div class="hero__content">
+                <h1 class="reveal reveal-delay-1">Shopify Developer building custom themes and advanced store features</h1>
+
+                <p class="reveal reveal-delay-2"> I help Shopify stores implement complex functionality and improve UX. </p>
+
+                <div class="hero__status reveal reveal-delay-3">
+                  <div class="hero__status-animation"></div>
+                  <div class="hero__status-text">Available for projects</div>
+                </div>
+
+                <div class="hero__actions">
+                  <div class="hero__actions-link-wrap reveal-left reveal-delay-4">
+                    <a href="#projects">View projects</a>
+                  </div>
+                  <div class="hero__actions-link-wrap reveal-right reveal-delay-5">
+                    <a href="#contact">Contact me</a>
+                  </div>
+                </div>
+              </div>
+              <div class="hero__media reveal-right reveal-delay-2">
+                <img src="./img/IMG_20241125_114658_096.jpg" alt="Shopify Developer" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="services reveal" id="services">
+          <div class="container">
+            <div class="services__wrapper">
+              <div class="services__head">
+                <h2 class="services__title reveal reveal-delay-1">Services</h2>
+                <p class="services__subtitle reveal reveal-delay-2"> What I can do for your Shopify store - from quick fixes to complex custom features. </p>
+              </div>
+
+              <div class="services__grid">
+                <article class="services__card reveal-left reveal-delay-2">
+                  <h3 class="services__card-title">Theme customization</h3>
+                  <p class="services__card-text"> Custom sections, layout updates, styling, and implementing designs from Figma. </p>
+                  <ul class="services__list">
+                    <li>Sections & blocks</li>
+                    <li>Responsive UI</li>
+                    <li>Clean Liquid structure</li>
+                  </ul>
+                </article>
+
+                <article class="services__card reveal-left reveal-delay-3">
+                  <h3 class="services__card-title">Custom functionality</h3>
+                  <p class="services__card-text"> Advanced features with JavaScript and Shopify theme logic. </p>
+                  <ul class="services__list">
+                    <li>Variant logic</li>
+                    <li>Custom popups</li>
+                    <li>AJAX cart updates</li>
+                  </ul>
+                </article>
+
+                <article class="services__card reveal-right reveal-delay-3">
+                  <h3 class="services__card-title">Performance & UX</h3>
+                  <p class="services__card-text"> Improve speed, reduce layout shifts, and make the store feel smoother. </p>
+                  <ul class="services__list">
+                    <li>Optimize sections</li>
+                    <li>Lazy loading</li>
+                    <li>Better interactions</li>
+                  </ul>
+                </article>
+
+                <article class="services__card reveal-right reveal-delay-2">
+                  <h3 class="services__card-title">Bug fixes & support</h3>
+                  <p class="services__card-text"> Fix issues quickly and keep your store stable after updates. </p>
+                  <ul class="services__list">
+                    <li>Theme bugs</li>
+                    <li>Cross-browser fixes</li>
+                    <li>Ongoing support</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="services__cta reveal">
+                <p class="services__cta-text">Need help with a Shopify task?</p>
+                <a class="services__cta-link" href="#contact">Let’s talk</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="skills reveal" id="skills">
+          <div class="container">
+            <div class="skills__wrapper">
+              <div class="skills__head">
+                <h2 class="skills__title reveal reveal-delay-1">Skills & Tools</h2>
+                <p class="skills__subtitle reveal reveal-delay-2"> My Shopify-focused stack for building clean, scalable and fast storefront experiences. </p>
+              </div>
+
+              <div class="skills__grid">
+                <article class="skills__card reveal-right reveal-delay-1">
+                  <h3 class="skills__card-title">Shopify</h3>
+                  <ul class="skills__list">
+                    <li>Liquid (sections, blocks, snippets)</li>
+                    <li>Theme customization (Dawn / Horizon / Focal)</li>
+                    <li>Metafields & metaobjects</li>
+                    <li>Subscriptions & bundle logic</li>
+                    <li>AJAX cart & dynamic UI</li>
+                    <li>App integrations</li>
+                    <li>Theme debugging</li>
+                  </ul>
+                </article>
+
+                <article class="skills__card reveal-left reveal-delay-2">
+                  <h3 class="skills__card-title">Frontend</h3>
+                  <ul class="skills__list">
+                    <li>JavaScript (ES6+)</li>
+                    <li>HTML / CSS (responsive systems)</li>
+                    <li>Animations & micro interactions</li>
+                    <li>Swiper & UI components</li>
+                    <li>Accessibility basics</li>
+                    <li>Performance optimization</li>
+                  </ul>
+                </article>
+
+                <article class="skills__card reveal-right reveal-delay-3">
+                  <h3 class="skills__card-title">Workflow</h3>
+                  <ul class="skills__list">
+                    <li>Figma → pixel-perfect implementation</li>
+                    <li>Working with designers</li>
+                    <li>Git version control</li>
+                    <li>Client communication</li>
+                    <li>Bug fixing & support</li>
+                  </ul>
+                </article>
+
+                <article class="skills__card reveal-left reveal-delay-4">
+                  <h3 class="skills__card-title">Tools</h3>
+                  <ul class="skills__list">
+                    <li>Figma</li>
+                    <li>Matrixify</li>
+                    <li>Shopify Admin & CLI</li>
+                    <li>DevTools debugging</li>
+                    <li>CSV / product workflows</li>
+                  </ul>
+                </article>
+
+                <article class="skills__card reveal-right reveal-delay-5">
+                  <h3 class="skills__card-title">Languages</h3>
+                  <ul class="skills__list">
+                    <li>Ukrainian — native</li>
+                    <li>Russian — native</li>
+                    <li>English — intermediate (written)</li>
+                  </ul>
+                </article>
+              </div>
+
+              <div class="skills__tags">
+                <span class="skills__tag reveal-right reveal-delay-3">AJAX cart</span>
+                <span class="skills__tag reveal-left reveal-delay-3">Variant logic</span>
+                <span class="skills__tag reveal-right reveal-delay-4">Subscriptions</span>
+                <span class="skills__tag reveal-left reveal-delay-4">Metaobjects</span>
+                <span class="skills__tag reveal-right reveal-delay-5">Filters</span>
+                <span class="skills__tag reveal-left reveal-delay-5">Performance</span>
+                <span class="skills__tag reveal-right reveal-delay-6">Figma</span>
+                <span class="skills__tag reveal-left reveal-delay-6">Animations</span>
+                <span class="skills__tag reveal-right reveal-delay-7">Git</span>
+                <span class="skills__tag reveal-left reveal-delay-7">Matrixify</span>
+              </div>
+              <p class="skills__note reveal reveal-delay-8">Comfortable working with international clients.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="projects reveal" id="projects">
+          <div class="container">
+            <div class="projects__wrapper">
+              <div class="projects__head">
+                <h2 class="reveal reveal-delay-1">Selected projects</h2>
+                <p class="reveal reveal-delay-2">Real Shopify work and custom implementations.</p>
+              </div>
+
+              <div class="projects__slider">
+                <div class="swiper projects_slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide reveal-right reveal-delay-1">
+                      <article class="project-card">
+                        <div class="project-card__badge">
+                          <?xml version="1.0" encoding="utf-8"?>
+                          <svg width="800px" height="800px" viewBox="-18 0 292 292" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                            <path
+                              d="M223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-1.703-1.703-5.029-1.185-6.32-.805-.19.056-3.388 1.043-8.678 2.68-5.18-14.906-14.322-28.604-30.405-28.604-.444 0-.901.018-1.358.044C129.31 3.407 123.644.779 118.75.779c-37.465 0-55.364 46.835-60.976 70.635-14.558 4.511-24.9 7.718-26.221 8.133-8.126 2.549-8.383 2.805-9.45 10.462C21.3 95.806.038 260.235.038 260.235l165.678 31.042 89.77-19.42S223.973 58.8 223.775 57.34zM156.49 40.848l-14.019 4.339c.005-.988.01-1.96.01-3.023 0-9.264-1.286-16.723-3.349-22.636 8.287 1.04 13.806 10.469 17.358 21.32zm-27.638-19.483c2.304 5.773 3.802 14.058 3.802 25.238 0 .572-.005 1.095-.01 1.624-9.117 2.824-19.024 5.89-28.953 8.966 5.575-21.516 16.025-31.908 25.161-35.828zm-11.131-10.537c1.617 0 3.246.549 4.805 1.622-12.007 5.65-24.877 19.88-30.312 48.297l-22.886 7.088C75.694 46.16 90.81 10.828 117.72 10.828z"
+                              fill="#95BF46" />
+                            <path
+                              d="M221.237 54.983c-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-.637-.634-1.496-.959-2.394-1.099l-12.527 256.233 89.762-19.418S223.972 58.8 223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357"
+                              fill="#5E8E3E" />
+                            <path
+                              d="M135.242 104.585l-11.069 32.926s-9.698-5.176-21.586-5.176c-17.428 0-18.305 10.937-18.305 13.693 0 15.038 39.2 20.8 39.2 56.024 0 27.713-17.577 45.558-41.277 45.558-28.44 0-42.984-17.7-42.984-17.7l7.615-25.16s14.95 12.835 27.565 12.835c8.243 0 11.596-6.49 11.596-11.232 0-19.616-32.16-20.491-32.16-52.724 0-27.129 19.472-53.382 58.778-53.382 15.145 0 22.627 4.338 22.627 4.338"
+                              fill="#FFF" />
+                          </svg>
+                        </div>
+                        <div class="project-card__media">
+                          <img src="./img/projects/netsportique/netsportique.uk_desktop.png" alt="Netsportique preview" />
+                        </div>
+
+                        <div class="project-card__content">
+                          <h3 class="project-card__title">Netsportique</h3>
+
+                          <p class="project-card__description">
+                            Large Shopify sports store with extensive catalog and fully custom theme implementation based on Glozin. Rebuilt major sections and implemented complex data workflows for
+                            products and metafields.
+                          </p>
+
+                          <ul class="project-card__highlights">
+                            <li>Rebuilt homepage, product, collection and navigation</li>
+                            <li>Custom mega menu and mobile menu</li>
+                            <li>AJAX cart and cart drawer</li>
+                            <li>Excel → CSV automation for product import</li>
+                            <li>Image mapping by SKU using Matrixify</li>
+                            <li>Advanced metafields workflows (Python scripts)</li>
+                          </ul>
+
+                          <div class="project-card__tags">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>Pixel Perfect</span>
+                            <span>JavaScript</span>
+                            <span>AJAX</span>
+                            <span>Matrixify</span>
+                            <span>Python</span>
+                          </div>
+                        </div>
+                        <div class="project-card__actions">
+                          <a href="https://netsportique.uk/" target="_blank" rel="noopener"> Live site </a>
+                          <span class="project-card__note">Code private</span>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide reveal-right reveal-delay-2">
+                      <article class="project-card">
+                        <div class="project-card__badge">
+                          <?xml version="1.0" encoding="utf-8"?>
+                          <svg width="800px" height="800px" viewBox="-18 0 292 292" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                            <path
+                              d="M223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-1.703-1.703-5.029-1.185-6.32-.805-.19.056-3.388 1.043-8.678 2.68-5.18-14.906-14.322-28.604-30.405-28.604-.444 0-.901.018-1.358.044C129.31 3.407 123.644.779 118.75.779c-37.465 0-55.364 46.835-60.976 70.635-14.558 4.511-24.9 7.718-26.221 8.133-8.126 2.549-8.383 2.805-9.45 10.462C21.3 95.806.038 260.235.038 260.235l165.678 31.042 89.77-19.42S223.973 58.8 223.775 57.34zM156.49 40.848l-14.019 4.339c.005-.988.01-1.96.01-3.023 0-9.264-1.286-16.723-3.349-22.636 8.287 1.04 13.806 10.469 17.358 21.32zm-27.638-19.483c2.304 5.773 3.802 14.058 3.802 25.238 0 .572-.005 1.095-.01 1.624-9.117 2.824-19.024 5.89-28.953 8.966 5.575-21.516 16.025-31.908 25.161-35.828zm-11.131-10.537c1.617 0 3.246.549 4.805 1.622-12.007 5.65-24.877 19.88-30.312 48.297l-22.886 7.088C75.694 46.16 90.81 10.828 117.72 10.828z"
+                              fill="#95BF46" />
+                            <path
+                              d="M221.237 54.983c-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-.637-.634-1.496-.959-2.394-1.099l-12.527 256.233 89.762-19.418S223.972 58.8 223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357"
+                              fill="#5E8E3E" />
+                            <path
+                              d="M135.242 104.585l-11.069 32.926s-9.698-5.176-21.586-5.176c-17.428 0-18.305 10.937-18.305 13.693 0 15.038 39.2 20.8 39.2 56.024 0 27.713-17.577 45.558-41.277 45.558-28.44 0-42.984-17.7-42.984-17.7l7.615-25.16s14.95 12.835 27.565 12.835c8.243 0 11.596-6.49 11.596-11.232 0-19.616-32.16-20.491-32.16-52.724 0-27.129 19.472-53.382 58.778-53.382 15.145 0 22.627 4.338 22.627 4.338"
+                              fill="#FFF" />
+                          </svg>
+                        </div>
+                        <div class="project-card__media">
+                          <img src="./img/projects/gud/gud.ua_.png" alt="GUD store preview" />
+                        </div>
+
+                        <div class="project-card__content">
+                          <h3 class="project-card__title">GUD</h3>
+
+                          <p class="project-card__description">
+                            Ukrainian accessories store built on Focal theme with extensive customization, advanced sections and design-driven animations across key pages.
+                          </p>
+
+                          <ul class="project-card__highlights">
+                            <li>Full store setup and customization</li>
+                            <li>Custom sections and interactive pages</li>
+                            <li>Filters and metafield integrations</li>
+                            <li>Text animation and UI enhancements</li>
+                            <li>Pixel perfect implementation with designers</li>
+                            <li>Ongoing design revisions</li>
+                          </ul>
+
+                          <div class="project-card__tags">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>JavaScript</span>
+                            <span>Swiper</span>
+                            <span>AJAX</span>
+                            <span>Animations</span>
+                            <span>Git</span>
+                          </div>
+                        </div>
+
+                        <div class="project-card__actions">
+                          <a href="https://gud.ua/" target="_blank" rel="noopener"> Live site </a>
+                          <span class="project-card__note">Code private</span>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide reveal-right reveal-delay-3">
+                      <article class="project-card">
+                        <div class="project-card__badge">
+                          <?xml version="1.0" encoding="utf-8"?>
+                          <svg width="800px" height="800px" viewBox="-18 0 292 292" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                            <path
+                              d="M223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-1.703-1.703-5.029-1.185-6.32-.805-.19.056-3.388 1.043-8.678 2.68-5.18-14.906-14.322-28.604-30.405-28.604-.444 0-.901.018-1.358.044C129.31 3.407 123.644.779 118.75.779c-37.465 0-55.364 46.835-60.976 70.635-14.558 4.511-24.9 7.718-26.221 8.133-8.126 2.549-8.383 2.805-9.45 10.462C21.3 95.806.038 260.235.038 260.235l165.678 31.042 89.77-19.42S223.973 58.8 223.775 57.34zM156.49 40.848l-14.019 4.339c.005-.988.01-1.96.01-3.023 0-9.264-1.286-16.723-3.349-22.636 8.287 1.04 13.806 10.469 17.358 21.32zm-27.638-19.483c2.304 5.773 3.802 14.058 3.802 25.238 0 .572-.005 1.095-.01 1.624-9.117 2.824-19.024 5.89-28.953 8.966 5.575-21.516 16.025-31.908 25.161-35.828zm-11.131-10.537c1.617 0 3.246.549 4.805 1.622-12.007 5.65-24.877 19.88-30.312 48.297l-22.886 7.088C75.694 46.16 90.81 10.828 117.72 10.828z"
+                              fill="#95BF46" />
+                            <path
+                              d="M221.237 54.983c-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-.637-.634-1.496-.959-2.394-1.099l-12.527 256.233 89.762-19.418S223.972 58.8 223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357"
+                              fill="#5E8E3E" />
+                            <path
+                              d="M135.242 104.585l-11.069 32.926s-9.698-5.176-21.586-5.176c-17.428 0-18.305 10.937-18.305 13.693 0 15.038 39.2 20.8 39.2 56.024 0 27.713-17.577 45.558-41.277 45.558-28.44 0-42.984-17.7-42.984-17.7l7.615-25.16s14.95 12.835 27.565 12.835c8.243 0 11.596-6.49 11.596-11.232 0-19.616-32.16-20.491-32.16-52.724 0-27.129 19.472-53.382 58.778-53.382 15.145 0 22.627 4.338 22.627 4.338"
+                              fill="#FFF" />
+                          </svg>
+                        </div>
+                        <div class="project-card__media">
+                          <img src="./img/projects/kdara/kdara-homepage.png" alt="K'Dara store preview" />
+                        </div>
+
+                        <div class="project-card__content">
+                          <h3 class="project-card__title">K'Dara</h3>
+
+                          <p class="project-card__description">
+                            Skincare Shopify store with subscriptions, custom interactive sections and immersive visual effects. Built with focus on customer experience and flexible content structure.
+                          </p>
+
+                          <ul class="project-card__highlights">
+                            <li>Full store build with custom sections</li>
+                            <li>Shopify subscriptions setup and integration</li>
+                            <li>Custom cart and AJAX interactions</li>
+                            <li>Parallax sections and UI animations</li>
+                            <li>Spotify music integration</li>
+                          </ul>
+
+                          <div class="project-card__tags">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>JavaScript</span>
+                            <span>Subscriptions</span>
+                            <span>AJAX</span>
+                            <span>Animations</span>
+                            <span>Git</span>
+                          </div>
+                        </div>
+
+                        <div class="project-card__actions">
+                          <a href="https://kdara.com/" target="_blank" rel="noopener"> Live site </a>
+                          <span class="project-card__note">Code private</span>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide reveal-right reveal-delay-1">
+                      <article class="project-card">
+                        <div class="project-card__badge">
+                          <?xml version="1.0" encoding="utf-8"?>
+                          <svg width="800px" height="800px" viewBox="-18 0 292 292" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                            <path
+                              d="M223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-1.703-1.703-5.029-1.185-6.32-.805-.19.056-3.388 1.043-8.678 2.68-5.18-14.906-14.322-28.604-30.405-28.604-.444 0-.901.018-1.358.044C129.31 3.407 123.644.779 118.75.779c-37.465 0-55.364 46.835-60.976 70.635-14.558 4.511-24.9 7.718-26.221 8.133-8.126 2.549-8.383 2.805-9.45 10.462C21.3 95.806.038 260.235.038 260.235l165.678 31.042 89.77-19.42S223.973 58.8 223.775 57.34zM156.49 40.848l-14.019 4.339c.005-.988.01-1.96.01-3.023 0-9.264-1.286-16.723-3.349-22.636 8.287 1.04 13.806 10.469 17.358 21.32zm-27.638-19.483c2.304 5.773 3.802 14.058 3.802 25.238 0 .572-.005 1.095-.01 1.624-9.117 2.824-19.024 5.89-28.953 8.966 5.575-21.516 16.025-31.908 25.161-35.828zm-11.131-10.537c1.617 0 3.246.549 4.805 1.622-12.007 5.65-24.877 19.88-30.312 48.297l-22.886 7.088C75.694 46.16 90.81 10.828 117.72 10.828z"
+                              fill="#95BF46" />
+                            <path
+                              d="M221.237 54.983c-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-.637-.634-1.496-.959-2.394-1.099l-12.527 256.233 89.762-19.418S223.972 58.8 223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357"
+                              fill="#5E8E3E" />
+                            <path
+                              d="M135.242 104.585l-11.069 32.926s-9.698-5.176-21.586-5.176c-17.428 0-18.305 10.937-18.305 13.693 0 15.038 39.2 20.8 39.2 56.024 0 27.713-17.577 45.558-41.277 45.558-28.44 0-42.984-17.7-42.984-17.7l7.615-25.16s14.95 12.835 27.565 12.835c8.243 0 11.596-6.49 11.596-11.232 0-19.616-32.16-20.491-32.16-52.724 0-27.129 19.472-53.382 58.778-53.382 15.145 0 22.627 4.338 22.627 4.338"
+                              fill="#FFF" />
+                          </svg>
+                        </div>
+                        <div class="project-card__media">
+                          <img src="./img/projects/inkohoreca/inkohoreca.com_pages_about-us.png" alt="Inkohoreca About page preview" />
+                        </div>
+
+                        <div class="project-card__content">
+                          <h3 class="project-card__title">Inkohoreca - About page</h3>
+
+                          <p class="project-card__description">
+                            Pixel-perfect implementation of a custom About Us page with multiple content sections, focused on clean layout, responsive behavior and matching design specifications.
+                          </p>
+
+                          <ul class="project-card__highlights">
+                            <li>Built ~10 custom sections from design</li>
+                            <li>Pixel perfect responsive layout</li>
+                            <li>Reusable sections and blocks</li>
+                            <li>Optimized structure for content editing</li>
+                          </ul>
+
+                          <div class="project-card__tags">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                            <span>Sections</span>
+                            <span>Swiper</span>
+                          </div>
+                        </div>
+                        <div class="project-card__actions">
+                          <a href="https://inkohoreca.com/pages/about-us" target="_blank" rel="noopener"> Live page </a>
+                          <span class="project-card__note">Code private</span>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide reveal-right reveal-delay-1">
+                      <article class="project-card">
+                        <div class="project-card__badge">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                            <path
+                              d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z"></path>
+                          </svg>
+                        </div>
+                        <div class="project-card__media">
+                          <img src="./img/projects/appleroom/appleroom.png" alt="Appleroom preview" />
+                        </div>
+
+                        <div class="project-card__content">
+                          <h3 class="project-card__title">Appleroom</h3>
+
+                          <p class="project-card__description">
+                            Ukrainian electronics e-commerce website where I implemented core storefront layouts and UI components for integration by the development team.
+                          </p>
+
+                          <ul class="project-card__highlights">
+                            <li>Built homepage, catalogue, product and cart layouts</li>
+                            <li>Custom filters and UI interactions</li>
+                            <li>Warranty selector on product pages</li>
+                            <li>Multiple custom sections and components</li>
+                            <li>Scroll reveal animations</li>
+                          </ul>
+
+                          <div class="project-card__tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>Swiper</span>
+                            <span>AOS</span>
+                            <span>noUiSlider</span>
+                          </div>
+                        </div>
+
+                        <div class="project-card__actions">
+                          <a href="https://appleroom.ua/" target="_blank" rel="noopener"> Live site </a>
+                          <span class="project-card__note">Code delivered to team</span>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide reveal-right reveal-delay-1">
+                      <article class="project-card">
+                        <div class="project-card__badge">
+                          <?xml version="1.0" encoding="utf-8"?>
+                          <svg width="800px" height="800px" viewBox="-18 0 292 292" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                            <path
+                              d="M223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-1.703-1.703-5.029-1.185-6.32-.805-.19.056-3.388 1.043-8.678 2.68-5.18-14.906-14.322-28.604-30.405-28.604-.444 0-.901.018-1.358.044C129.31 3.407 123.644.779 118.75.779c-37.465 0-55.364 46.835-60.976 70.635-14.558 4.511-24.9 7.718-26.221 8.133-8.126 2.549-8.383 2.805-9.45 10.462C21.3 95.806.038 260.235.038 260.235l165.678 31.042 89.77-19.42S223.973 58.8 223.775 57.34zM156.49 40.848l-14.019 4.339c.005-.988.01-1.96.01-3.023 0-9.264-1.286-16.723-3.349-22.636 8.287 1.04 13.806 10.469 17.358 21.32zm-27.638-19.483c2.304 5.773 3.802 14.058 3.802 25.238 0 .572-.005 1.095-.01 1.624-9.117 2.824-19.024 5.89-28.953 8.966 5.575-21.516 16.025-31.908 25.161-35.828zm-11.131-10.537c1.617 0 3.246.549 4.805 1.622-12.007 5.65-24.877 19.88-30.312 48.297l-22.886 7.088C75.694 46.16 90.81 10.828 117.72 10.828z"
+                              fill="#95BF46" />
+                            <path
+                              d="M221.237 54.983c-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-.637-.634-1.496-.959-2.394-1.099l-12.527 256.233 89.762-19.418S223.972 58.8 223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357"
+                              fill="#5E8E3E" />
+                            <path
+                              d="M135.242 104.585l-11.069 32.926s-9.698-5.176-21.586-5.176c-17.428 0-18.305 10.937-18.305 13.693 0 15.038 39.2 20.8 39.2 56.024 0 27.713-17.577 45.558-41.277 45.558-28.44 0-42.984-17.7-42.984-17.7l7.615-25.16s14.95 12.835 27.565 12.835c8.243 0 11.596-6.49 11.596-11.232 0-19.616-32.16-20.491-32.16-52.724 0-27.129 19.472-53.382 58.778-53.382 15.145 0 22.627 4.338 22.627 4.338"
+                              fill="#FFF" />
+                          </svg>
+                        </div>
+                        <div class="project-card__media">
+                          <img src="./img/projects/moonmadegems/moonmadegems.com_.png" alt="Moonmadegems preview" />
+                        </div>
+
+                        <div class="project-card__content">
+                          <h3 class="project-card__title">Moonmadegems</h3>
+
+                          <p class="project-card__description">
+                            Jewelry Shopify store built on Glozin theme with custom content structure and product logic. Implemented flexible sections and metafield-driven features for gemstone
+                            attributes.
+                          </p>
+
+                          <ul class="project-card__highlights">
+                            <li>Configured and customized theme sections</li>
+                            <li>Metafields and metaobjects setup</li>
+                            <li>Chakra and benefits logic for products</li>
+                            <li>Content structure improvements</li>
+                          </ul>
+
+                          <div class="project-card__tags">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>Animations</span>
+                            <span>JavaScript</span>
+                            <span>Metaobjects</span>
+                            <span>Metafields</span>
+                          </div>
+                        </div>
+
+                        <div class="project-card__actions">
+                          <a href="https://moonmadegems.com/" target="_blank" rel="noopener"> Live site </a>
+                          <span class="project-card__note">Code in theme</span>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide reveal-right reveal-delay-1">
+                      <article class="project-card">
+                        <div class="project-card__badge">
+                          <?xml version="1.0" encoding="utf-8"?>
+                          <svg width="800px" height="800px" viewBox="-18 0 292 292" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                            <path
+                              d="M223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-1.703-1.703-5.029-1.185-6.32-.805-.19.056-3.388 1.043-8.678 2.68-5.18-14.906-14.322-28.604-30.405-28.604-.444 0-.901.018-1.358.044C129.31 3.407 123.644.779 118.75.779c-37.465 0-55.364 46.835-60.976 70.635-14.558 4.511-24.9 7.718-26.221 8.133-8.126 2.549-8.383 2.805-9.45 10.462C21.3 95.806.038 260.235.038 260.235l165.678 31.042 89.77-19.42S223.973 58.8 223.775 57.34zM156.49 40.848l-14.019 4.339c.005-.988.01-1.96.01-3.023 0-9.264-1.286-16.723-3.349-22.636 8.287 1.04 13.806 10.469 17.358 21.32zm-27.638-19.483c2.304 5.773 3.802 14.058 3.802 25.238 0 .572-.005 1.095-.01 1.624-9.117 2.824-19.024 5.89-28.953 8.966 5.575-21.516 16.025-31.908 25.161-35.828zm-11.131-10.537c1.617 0 3.246.549 4.805 1.622-12.007 5.65-24.877 19.88-30.312 48.297l-22.886 7.088C75.694 46.16 90.81 10.828 117.72 10.828z"
+                              fill="#95BF46" />
+                            <path
+                              d="M221.237 54.983c-1.055-.088-23.383-1.743-23.383-1.743s-15.507-15.395-17.209-17.099c-.637-.634-1.496-.959-2.394-1.099l-12.527 256.233 89.762-19.418S223.972 58.8 223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357"
+                              fill="#5E8E3E" />
+                            <path
+                              d="M135.242 104.585l-11.069 32.926s-9.698-5.176-21.586-5.176c-17.428 0-18.305 10.937-18.305 13.693 0 15.038 39.2 20.8 39.2 56.024 0 27.713-17.577 45.558-41.277 45.558-28.44 0-42.984-17.7-42.984-17.7l7.615-25.16s14.95 12.835 27.565 12.835c8.243 0 11.596-6.49 11.596-11.232 0-19.616-32.16-20.491-32.16-52.724 0-27.129 19.472-53.382 58.778-53.382 15.145 0 22.627 4.338 22.627 4.338"
+                              fill="#FFF" />
+                          </svg>
+                        </div>
+                        <div class="project-card__media">
+                          <img src="./img/projects/acnelab/acnelab.eu_product.png" alt="AcneLab+ preview" />
+                        </div>
+
+                        <div class="project-card__content">
+                          <h3 class="project-card__title">AcneLab+</h3>
+
+                          <p class="project-card__description">
+                            Ukrainian skincare Shopify store built on Horizon theme with custom structure, metafield-driven filters and a bundle-style product section for streamlined purchasing.
+                          </p>
+
+                          <ul class="project-card__highlights">
+                            <li>Built full store using reference-based layout</li>
+                            <li>Metafields setup and collection filtering</li>
+                            <li>Custom bundle section with AJAX cart logic</li>
+                            <li>Theme improvements and section adjustments</li>
+                            <li>Ongoing client collaboration and support</li>
+                          </ul>
+
+                          <div class="project-card__tags">
+                            <span>Shopify</span>
+                            <span>Liquid</span>
+                            <span>Metafields</span>
+                            <span>Metaobjects</span>
+                            <span>JavaScript</span>
+                            <span>AJAX API</span>
+                            <span>Git</span>
+                          </div>
+                        </div>
+
+                        <div class="project-card__actions">
+                          <a href="https://acnelab.eu/" target="_blank" rel="noopener"> Live site </a>
+                          <span class="project-card__note">Code private</span>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="clients-get reveal" id="clients-get">
+          <div class="container">
+            <div class="clients-get__wrapper">
+              <div class="clients-get__head">
+                <h2 class="clients-get__title reveal reveal-delay-1">What clients get</h2>
+                <p class="clients-get__subtitle reveal reveal-delay-2"> Working with me means reliable delivery, clear communication and Shopify expertise. </p>
+              </div>
+
+              <div class="clients-get__grid">
+                <article class="clients-get__card reveal-left reveal-delay-1">
+                  <h3>Clear communication</h3>
+                  <p>I keep things simple, transparent and always keep you updated on progress.</p>
+                </article>
+
+                <article class="clients-get__card reveal-right reveal-delay-2">
+                  <h3>Clean scalable code</h3>
+                  <p>Well-structured Shopify code that’s easy to maintain and extend.</p>
+                </article>
+
+                <article class="clients-get__card reveal-left reveal-delay-3">
+                  <h3>Fast delivery</h3>
+                  <p>Efficient workflows and focused execution to meet deadlines.</p>
+                </article>
+
+                <article class="clients-get__card reveal-right reveal-delay-4">
+                  <h3>Shopify best practices</h3>
+                  <p>Solutions built according to platform standards and performance guidelines.</p>
+                </article>
+
+                <article class="clients-get__card reveal-left reveal-delay-5">
+                  <h3>Problem solving mindset</h3>
+                  <p>I don’t just code - I help find the right technical solution.</p>
+                </article>
+
+                <article class="clients-get__card reveal-right reveal-delay-6">
+                  <h3>Long-term support</h3>
+                  <p>Available for improvements, updates and ongoing collaboration.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact reveal" id="contact">
+          <div class="container">
+            <div class="contact__wrapper">
+              <div class="contact__head">
+                <h2 class="contact__title reveal reveal-delay-1">Let’s work together</h2>
+                <p class="contact__subtitle reveal reveal-delay-2">Have a Shopify project or need help with your store? <br />Send me a message - I usually reply within 24 hours. </p>
+              </div>
+
+              <div class="contact__content">
+                <form id="contactForm" class="contact__form" action="https://formspree.io/f/mpqjoaqb" method="POST">
+                  <!-- Anti spam -->
+                  <input type="text" name="_gotcha" style="display: none" />
+
+                  <!-- Subject -->
+                  <input type="hidden" name="_subject" value="New message from portfolio" />
+
+                  <div class="contact__field reveal reveal-delay-1">
+                    <label for="form_name">Name</label>
+                    <input type="text" name="name" id="form_name" placeholder=" " required autocomplete="name" />
+                  </div>
+
+                  <div class="contact__field reveal reveal-delay-2">
+                    <label for="form_email">Email</label>
+                    <input type="email" name="email" id="form_email" placeholder=" " required autocomplete="email" />
+                  </div>
+
+                  <div class="contact__field reveal reveal-delay-3">
+                    <label for="form_message">Message</label>
+                    <textarea name="message" id="form_message" placeholder=" " rows="5" required></textarea>
+                  </div>
+
+                  <button type="submit" class="contact__button reveal-left reveal-delay-6" id="contactSubmit">Send message</button>
+                </form>
+
+                <div class="contact__success reveal reveal-delay-4" hidden>
+                  <p>✅ Thanks for your message - I’ll get back to you within 24 hours.</p>
+
+                  <button type="button" class="contact__again" id="contactAgain">Want to send another message? Totally fine - just no spam 🙂</button>
+                </div>
+
+                <div class="contact__info">
+                  <h3 class="reveal reveal-delay-1">Contact details</h3>
+
+                  <ul>
+                    <li class="reveal-left reveal-delay-2">
+                      <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                          <path
+                            d="M104,152a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H96A8,8,0,0,1,104,152Zm136-36v60a16,16,0,0,1-16,16H136v32a8,8,0,0,1-16,0V192H32a16,16,0,0,1-16-16V116A60.07,60.07,0,0,1,76,56h76V24a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H168V56h12A60.07,60.07,0,0,1,240,116ZM120,176V116a44,44,0,0,0-88,0v60Zm104-60a44.05,44.05,0,0,0-44-44H168v72a8,8,0,0,1-16,0V72H116.75A59.86,59.86,0,0,1,136,116v60h88Z"></path>
+                        </svg>
+                      </span>
+                      <span class="text">Email:</span>
+                      <a href="mailto:system.asus.13@gmail.com">system.asus.13@gmail.com</a>
+                    </li>
+
+                    <li class="reveal-left reveal-delay-3">
+                      <span class="icon">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Upwork" role="img" viewBox="0 0 512 512">
+                          <rect width="512" height="512" rx="15%" fill="#6fda44" />
+                          <path
+                            fill="#ffffff"
+                            d="M357.2,296.9c-17,0-33-7.2-47.4-18.9l3.5-16.6l0.1-.6c3.2-17.6,13.1-47.2,43.8-47.2c23,0,41.7,18.7,41.7,41.7S380.2,296.9,357.2,296.9L357.2,296.9z M357.2,171.4c-39.2,0-69.5,25.4-81.9,67.3c-18.8-28.3-33.1-62.2-41.4-90.8h-42.2v109.7c0,21.7-17.6,39.3-39.3,39.3s-39.3-17.6-39.3-39.3V147.8H71v109.7c0,44.9,36.5,81.8,81.4,81.8s81.4-36.9,81.4-81.8v-18.4c8.2,17.1,18.2,34.4,30.4,49.6l-25.8,121.4h43.1l18.7-88c16.4,10.5,35.2,17.1,56.8,17.1c46.2,0,83.8-37.8,83.8-84.1C440.9,209,403.4,171.4,357.2,171.4" />
+                        </svg>
+                      </span>
+                      <span class="text">Upwork:</span>
+
+                      <a href="https://www.upwork.com/freelancers/~01c438600bf16efa53?mp_source=share" target="_blank">View profile</a>
+                    </li>
+
+                    <li class="reveal-left reveal-delay-4">
+                      <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                          <path
+                            d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
+                        </svg>
+                      </span>
+                      <span class="text">GitHub:</span>
+
+                      <a href="https://github.com/Serrakura1" target="_blank">github.com/Serrakura1</a>
+                    </li>
+
+                    <li class="reveal-left reveal-delay-5">
+                      <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                          <path
+                            d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19Zm-61.14,36L78.15,126.35l-49.6-9.73ZM88,200V152.52l24.79,21.74Zm87.53,8L92.85,135.5l119-85.29Z"></path>
+                        </svg>
+                      </span>
+                      <span class="text">Telegram:</span>
+
+                      <a href="https://t.me/vitwebdev" target="_blank">@vitwebdev</a>
+                    </li>
+                  </ul>
+
+                  <p class="contact__note reveal-left reveal-delay-8">Open to freelance Shopify projects and long-term collaboration.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__wrapper">
+            <div class="footer__top">
+              <div class="footer__brand">
+                <div class="footer__name reveal reveal-delay-2">Shopify Developer</div>
+                <p class="footer__tagline reveal reveal-delay-3"> Building custom Shopify experiences and scalable storefront solutions. </p>
+              </div>
+
+              <nav class="footer__nav">
+                <a href="#services" class="reveal-left reveal-delay-4">Services</a>
+                <a href="#skills" class="reveal-left reveal-delay-5">Skills</a>
+                <a href="#projects" class="reveal-left reveal-delay-6">Projects</a>
+                <a href="#contact" class="reveal-left reveal-delay-7">Contact</a>
+              </nav>
+
+              <div class="footer__contact">
+                <ul class="footer__contact-list">
+                  <li class="reveal-left reveal-delay-4">
+                    <span class="icon">
+                      <!-- Email icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M104,152a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H96A8,8,0,0,1,104,152Zm136-36v60a16,16,0,0,1-16,16H136v32a8,8,0,0,1-16,0V192H32a16,16,0,0,1-16-16V116A60.07,60.07,0,0,1,76,56h76V24a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H168V56h12A60.07,60.07,0,0,1,240,116ZM120,176V116a44,44,0,0,0-88,0v60Zm104-60a44.05,44.05,0,0,0-44-44H168v72a8,8,0,0,1-16,0V72H116.75A59.86,59.86,0,0,1,136,116v60h88Z"></path>
+                      </svg>
+                    </span>
+                    <a href="mailto:system.asus.13@gmail.com"> system.asus.13@gmail.com </a>
+                  </li>
+
+                  <li class="reveal-left reveal-delay-5">
+                    <span class="icon">
+                      <!-- Upwork icon -->
+                      <?xml version="1.0" encoding="utf-8"?>
+                      <svg xmlns="http://www.w3.org/2000/svg" aria-label="Upwork" role="img" viewBox="0 0 512 512">
+                        <rect width="512" height="512" rx="15%" fill="#6fda44" />
+                        <path
+                          fill="#ffffff"
+                          d="M357.2,296.9c-17,0-33-7.2-47.4-18.9l3.5-16.6l0.1-.6c3.2-17.6,13.1-47.2,43.8-47.2c23,0,41.7,18.7,41.7,41.7S380.2,296.9,357.2,296.9L357.2,296.9z M357.2,171.4c-39.2,0-69.5,25.4-81.9,67.3c-18.8-28.3-33.1-62.2-41.4-90.8h-42.2v109.7c0,21.7-17.6,39.3-39.3,39.3s-39.3-17.6-39.3-39.3V147.8H71v109.7c0,44.9,36.5,81.8,81.4,81.8s81.4-36.9,81.4-81.8v-18.4c8.2,17.1,18.2,34.4,30.4,49.6l-25.8,121.4h43.1l18.7-88c16.4,10.5,35.2,17.1,56.8,17.1c46.2,0,83.8-37.8,83.8-84.1C440.9,209,403.4,171.4,357.2,171.4" />
+                      </svg>
+                    </span>
+                    <a href="https://www.upwork.com/freelancers/~01c438600bf16efa53?mp_source=share" target="_blank"> Upwork profile </a>
+                  </li>
+
+                  <li class="reveal-left reveal-delay-6">
+                    <span class="icon">
+                      <!-- GitHub icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"></path>
+                      </svg>
+                    </span>
+                    <a href="https://github.com/Serrakura1" target="_blank"> GitHub </a>
+                  </li>
+
+                  <li class="reveal-left reveal-delay-7">
+                    <span class="icon">
+                      <!-- Telegram icon -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19Zm-61.14,36L78.15,126.35l-49.6-9.73ZM88,200V152.52l24.79,21.74Zm87.53,8L92.85,135.5l119-85.29Z"></path>
+                      </svg>
+                    </span>
+                    <a href="https://t.me/vitwebdev" target="_blank"> Telegram </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="footer__bottom">
+              <p class="reveal-left reveal-delay-8">© <span id="year"></span> All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <a href="#contact" class="floating-contact" id="floatingContact"> 💬 Contact </a>
+      <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <script src="./js/header.js"></script>
+    <script src="./js/footer.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/projects.js"></script>
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
